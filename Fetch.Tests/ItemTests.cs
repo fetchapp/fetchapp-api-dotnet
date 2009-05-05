@@ -15,9 +15,9 @@ namespace Fetch.Tests
         [TestFixtureSetUp]
         public void FixtureSetup()
         {
-            Config.Key = "api_key";
-            Config.Token = "api_token";
-            Config.Subdomain = "yourdomain";
+            Config.Key = "pixallent";
+            Config.Token = "pixallent";
+            Config.Domain = "pixallent.myhost.dev:3000";
         }
 
         [Test]

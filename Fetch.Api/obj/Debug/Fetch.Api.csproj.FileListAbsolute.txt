@@ -1,0 +1,6 @@
+Z:\michaellarkin On My Mac\development\google_code\fetch-api\fetchapi-dotnet\Fetch.Api\obj\Debug\ResolveAssemblyReference.cache
+Z:\michaellarkin On My Mac\development\google_code\fetch-api\fetchapi-dotnet\Fetch.Api\bin\Debug\Fetch.Api.dll
+Z:\michaellarkin On My Mac\development\google_code\fetch-api\fetchapi-dotnet\Fetch.Api\bin\Debug\Fetch.Api.pdb
+Z:\michaellarkin On My Mac\development\google_code\fetch-api\fetchapi-dotnet\Fetch.Api\obj\Debug\Fetch.Api.dll
+Z:\michaellarkin On My Mac\development\google_code\fetch-api\fetchapi-dotnet\Fetch.Api\obj\Debug\Fetch.Api.pdb
+Z:\michaellarkin On My Mac\development\google_code\fetch-api\fetchapi-dotnet\Fetch.Api\bin\Debug\Fetch.Api.XML

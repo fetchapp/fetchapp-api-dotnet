@@ -1,0 +1,5 @@
+Z:\michaellarkin On My Mac\development\dotnet\fetchapi-dotnet\Fetch.Api\bin\Release\Fetch.Api.dll
+Z:\michaellarkin On My Mac\development\dotnet\fetchapi-dotnet\Fetch.Api\bin\Release\Fetch.Api.pdb
+Z:\michaellarkin On My Mac\development\dotnet\fetchapi-dotnet\Fetch.Api\obj\Release\ResolveAssemblyReference.cache
+Z:\michaellarkin On My Mac\development\dotnet\fetchapi-dotnet\Fetch.Api\obj\Release\Fetch.Api.dll
+Z:\michaellarkin On My Mac\development\dotnet\fetchapi-dotnet\Fetch.Api\obj\Release\Fetch.Api.pdb

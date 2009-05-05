@@ -1,33 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\Development\FetchPlugins\dot_net\trunk\Fetch.Tests\bin\Debug\Fetch.Tests.dll" total="12" failures="0" not-run="0" date="2008-09-26" time="14:38:53">
-  <environment nunit-version="2.4.8.0" clr-version="2.0.50727.3053" os-version="Microsoft Windows NT 5.1.2600 Service Pack 3" platform="Win32NT" cwd="C:\Development\FetchPlugins\dot_net\trunk\Fetch.Tests\bin\Debug" machine-name="MICHAEL-6054F13" user="Administrator" user-domain="MICHAEL-6054F13" />
+<test-results name="Z:\michaellarkin On My Mac\development\google_code\fetch-api\fetchapi-dotnet\Fetch.Tests\bin\Debug\nunit.framework.dll" total="0" errors="0" failures="0" not-run="0" ignored="0" skipped="0" invalid="0" date="2009-05-05" time="14:58:56">
+  <environment nunit-version="2.5.0.9122" clr-version="2.0.50727.3082" os-version="Microsoft Windows NT 5.1.2600 Service Pack 3" platform="Win32NT" cwd="Z:\michaellarkin On My Mac\development\google_code\fetch-api\fetchapi-dotnet\Fetch.Tests\bin\Debug" machine-name="MICHAEL-B5A3679" user="JErickson" user-domain="ADVISORNET" />
   <culture-info current-culture="en-US" current-uiculture="en-US" />
-  <test-suite name="C:\Development\FetchPlugins\dot_net\trunk\Fetch.Tests\bin\Debug\Fetch.Tests.dll" success="True" time="30.000" asserts="0">
+  <test-suite name="Z:\michaellarkin On My Mac\development\google_code\fetch-api\fetchapi-dotnet\Fetch.Tests\bin\Debug\nunit.framework.dll" executed="True" success="False" time="0.031" asserts="0">
     <results>
-      <test-suite name="Fetch" success="True" time="29.984" asserts="0">
+      <test-suite name="NUnit" executed="True" success="False" time="0.016" asserts="0">
         <results>
-          <test-suite name="Tests" success="True" time="29.984" asserts="0">
+          <test-suite name="Framework" executed="True" success="False" time="0.000" asserts="0">
             <results>
-              <test-suite name="ItemTests" success="True" time="22.047" asserts="0">
-                <results>
-                  <test-case name="Fetch.Tests.ItemTests.CreateInvalidItem" executed="True" success="True" time="17.766" asserts="0" />
-                  <test-case name="Fetch.Tests.ItemTests.CreateRetrieveUpdateDelete" executed="True" success="True" time="3.047" asserts="1" />
-                  <test-case name="Fetch.Tests.ItemTests.RetrieveAllItems" executed="True" success="True" time="0.734" asserts="1" />
-                  <test-case name="Fetch.Tests.ItemTests.RetrieveInvalidItem" executed="True" success="True" time="0.484" asserts="0" />
-                </results>
-              </test-suite>
-              <test-suite name="OrderTests" success="True" time="7.906" asserts="0">
-                <results>
-                  <test-case name="Fetch.Tests.OrderTests.CreateInvalidOrder" executed="True" success="True" time="0.813" asserts="0" />
-                  <test-case name="Fetch.Tests.OrderTests.CreateRetrieveUpdateDelete" executed="True" success="True" time="2.094" asserts="1" />
-                  <test-case name="Fetch.Tests.OrderTests.EmailInvalidOrder" executed="True" success="True" time="0.172" asserts="0" />
-                  <test-case name="Fetch.Tests.OrderTests.ExpireInvalidOrder" executed="True" success="True" time="0.297" asserts="0" />
-                  <test-case name="Fetch.Tests.OrderTests.ExpireOrder" executed="True" success="True" time="1.625" asserts="1" />
-                  <test-case name="Fetch.Tests.OrderTests.RetrieveAllOrders" executed="True" success="True" time="0.797" asserts="1" />
-                  <test-case name="Fetch.Tests.OrderTests.RetrieveInvalidOrder" executed="True" success="True" time="0.313" asserts="0" />
-                  <test-case name="Fetch.Tests.OrderTests.SendEmail" executed="True" success="True" time="1.797" asserts="0" />
-                </results>
+              <test-suite name="TestCase" executed="False">
+                <reason>
+                  <message><![CDATA[TestCase does not have any tests]]></message>
+                </reason>
               </test-suite>
             </results>
           </test-suite>

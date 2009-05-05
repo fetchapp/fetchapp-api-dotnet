@@ -10,15 +10,27 @@ namespace Fetch.Api
     {
 
         /// <summary>
-        /// the subdomain used to connect to fetch
+        /// The domain used to connect to your account
+        /// </summary>
+        /// <example>http://&lt;subdomain.fetchapp.com&gt;/</example>
+        public static string Domain
+        {
+            get { return domain; }
+            set { domain = value; }
+        }
+        private static string domain;
+
+        /// <summary>
+        /// The subdomain used to connect to your account. DEPRECIATED.
         /// </summary>
         /// <example>http://&lt;subdomain&gt;.fetchapp.com/</example>
-        public static string Subdomain
+        [Obsolete("Please use Domain instead")]
+        public static string SubDomain
         {
-            get { return subdomain; }
-            set { subdomain = value; }
+            get { return subDomain; }
+            set { subDomain = value; }
         }
-        private static string subdomain;
+        private static string subDomain;
 
         /// <summary>
         /// Authentication key used to log into the Fetch API. 

@@ -1,6 +1,5 @@
-
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Web Developer Express 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fetch.Api", "Fetch.Api\Fetch.Api.csproj", "{20E1A657-E531-47EF-90DA-16AC1C145CAF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fetch.Tests", "Fetch.Tests\Fetch.Tests.csproj", "{495557BA-1814-4580-9894-AD6B2379770E}"

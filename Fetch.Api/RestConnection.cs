@@ -23,7 +23,7 @@ namespace Fetch.Api
             if ( string.IsNullOrEmpty( Config.Key ) || string.IsNullOrEmpty( Config.Token ) )
                 throw new FetchException( "Fetch API not configured.  Please set values in Fetch.Api.Config" );
 
-            this.hostname = string.Format( "http://{0}.fetchapp.com/api/", Config.Subdomain );
+            this.hostname = string.Format( "http://{0}/api/", Config.Domain );
         }
 
         /// <summary>

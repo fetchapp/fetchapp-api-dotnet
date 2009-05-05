@@ -1,40 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
-  <TopNode>[0-1014]C:\Development\FetchPlugins\dot_net\trunk\Fetch.Tests\bin\Debug\Fetch.Tests.dll</TopNode>
-  <SelectedNode>[0-1014]C:\Development\FetchPlugins\dot_net\trunk\Fetch.Tests\bin\Debug\Fetch.Tests.dll</SelectedNode>
+  <TopNode>[0-1000]Z:\michaellarkin On My Mac\development\dotnet\fetchapi-dotnet\Fetch.Tests\bin\Debug\Fetch.Tests.dll</TopNode>
+  <SelectedNode>[0-1000]Z:\michaellarkin On My Mac\development\dotnet\fetchapi-dotnet\Fetch.Tests\bin\Debug\Fetch.Tests.dll</SelectedNode>
   <ExcludeCategories>false</ExcludeCategories>
-  <Nodes>
-    <Node UniqueName="[0-1014]C:\Development\FetchPlugins\dot_net\trunk\Fetch.Tests\bin\Debug\Fetch.Tests.dll" Expanded="true">
-      <Nodes>
-        <Node UniqueName="[0-1015]Fetch" Expanded="true">
-          <Nodes>
-            <Node UniqueName="[0-1016]Fetch.Tests" Expanded="true">
-              <Nodes>
-                <Node UniqueName="[0-1009]Fetch.Tests.ItemTests" Expanded="true">
-                  <Nodes>
-                    <Node UniqueName="[0-1013]Fetch.Tests.ItemTests.CreateInvalidItem" />
-                    <Node UniqueName="[0-1010]Fetch.Tests.ItemTests.CreateRetrieveUpdateDelete" />
-                    <Node UniqueName="[0-1011]Fetch.Tests.ItemTests.RetrieveAllItems" />
-                    <Node UniqueName="[0-1012]Fetch.Tests.ItemTests.RetrieveInvalidItem" />
-                  </Nodes>
-                </Node>
-                <Node UniqueName="[0-1000]Fetch.Tests.OrderTests" Expanded="true">
-                  <Nodes>
-                    <Node UniqueName="[0-1004]Fetch.Tests.OrderTests.CreateInvalidOrder" />
-                    <Node UniqueName="[0-1001]Fetch.Tests.OrderTests.CreateRetrieveUpdateDelete" />
-                    <Node UniqueName="[0-1008]Fetch.Tests.OrderTests.EmailInvalidOrder" />
-                    <Node UniqueName="[0-1006]Fetch.Tests.OrderTests.ExpireInvalidOrder" />
-                    <Node UniqueName="[0-1005]Fetch.Tests.OrderTests.ExpireOrder" />
-                    <Node UniqueName="[0-1002]Fetch.Tests.OrderTests.RetrieveAllOrders" />
-                    <Node UniqueName="[0-1003]Fetch.Tests.OrderTests.RetrieveInvalidOrder" />
-                    <Node UniqueName="[0-1007]Fetch.Tests.OrderTests.SendEmail" />
-                  </Nodes>
-                </Node>
-              </Nodes>
-            </Node>
-          </Nodes>
-        </Node>
-      </Nodes>
-    </Node>
-  </Nodes>
+  <Nodes />
 </VisualState>
