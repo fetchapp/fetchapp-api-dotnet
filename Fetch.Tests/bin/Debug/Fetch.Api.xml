@@ -1,0 +1,499 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Fetch.Api</name>
+    </assembly>
+    <members>
+        <member name="T:Fetch.Api.Utility">
+            <summary>
+            Static utility functions
+            </summary>
+        </member>
+        <member name="M:Fetch.Api.Utility.SerializeToXml(System.Object)">
+            <summary>
+            Serializes the given object into an XML string.  Object must have the
+            SerializableAttribute applied.
+            </summary>
+            <param name="target">object to serialize</param>
+            <returns>XML string</returns>
+        </member>
+        <member name="M:Fetch.Api.Utility.DeserializeFromXmlStream``1(System.IO.Stream)">
+            <summary>
+            Deserializes an object of the generic parameter type from the given
+            stream of XML
+            </summary>
+            <typeparam name="T">type of the object to deserialize</typeparam>
+            <param name="stream">XML stream containing the object data</param>
+            <returns>instance of deserialized type</returns>
+        </member>
+        <member name="M:Fetch.Api.Utility.DeserializeFromXml``1(System.String)">
+            <summary>
+            Deserializes an object of the generic parameter type from the given 
+            XML string
+            </summary>
+            <typeparam name="T">type of the object to deserialize</typeparam>
+            <param name="xml">string of XML</param>
+            <returns>instance of deserialized type</returns>
+        </member>
+        <member name="T:Fetch.Api.Item">
+            <summary>
+            Item is a model object that mirrors the type used by the Fetch REST API, and contains
+            all the properties and methods offered by the API.
+            </summary>
+        </member>
+        <member name="M:Fetch.Api.Item.#ctor">
+            <summary>
+            default constructor
+            </summary>
+        </member>
+        <member name="M:Fetch.Api.Item.Save">
+            <summary>
+            Commits the current item to Fetch.  Item is created if new, 
+            or updated if existing.
+            </summary>
+        </member>
+        <member name="M:Fetch.Api.Item.Delete">
+            <summary>
+            Deletes the current item from Fetch.
+            </summary>
+        </member>
+        <member name="M:Fetch.Api.Item.RetrieveAll">
+            <summary>
+            Retrieve all the existing items from Fetch
+            </summary>
+        </member>
+        <member name="M:Fetch.Api.Item.Retrieve(System.String)">
+            <summary>
+            Retrieve a specific item from Fetch
+            </summary>
+            <param name="sku">The SKU of the Item to retrieve</param>
+        </member>
+        <member name="M:Fetch.Api.Item.Delete(System.String)">
+            <summary>
+            Deletes an item from Fetch
+            </summary>
+            <param name="sku">the SKU of the Item to delete</param>
+        </member>
+        <member name="M:Fetch.Api.Item.Create(Fetch.Api.Item)">
+            <summary>
+            Creates a new item in Fetch
+            </summary>
+            <returns>the actual item object that was created by Fetch</returns>
+        </member>
+        <member name="M:Fetch.Api.Item.Update(Fetch.Api.Item)">
+            <summary>
+            Updates the given item in Fetch
+            </summary>
+            <returns>the actual item object that was updated in Fetch</returns>
+        </member>
+        <member name="P:Fetch.Api.Item.Sku">
+            <summary>
+            unique identifier for this item
+            </summary>
+        </member>
+        <member name="P:Fetch.Api.Item.Name">
+            <summary>
+            friendly name of the item
+            </summary>
+        </member>
+        <member name="P:Fetch.Api.Item.DownloadCount">
+            <summary>
+            number of times this Item has been downloaded from Fetch
+            </summary>
+        </member>
+        <member name="P:Fetch.Api.Item.CreatedAt">
+            <summary>
+            date this item was created
+            </summary>
+        </member>
+        <member name="P:Fetch.Api.Item.Filename">
+            <summary>
+            The name of the file attached to this item
+            </summary>
+        </member>
+        <member name="P:Fetch.Api.Item.SizeBytes">
+            <summary>
+            size in bytes of the file attached to this item
+            </summary>
+        </member>
+        <member name="P:Fetch.Api.Item.ContentType">
+            <summary>
+            type of file attached to this item
+            </summary>
+        </member>
+        <member name="P:Fetch.Api.Item.IsNew">
+            <summary>
+            Gets true if this item has not been committed to Fetch.  Gets false if this
+            item already exists in Fetch.
+            </summary>
+        </member>
+        <member name="T:Fetch.Api.ItemCollection">
+            <summary>
+            Represents a collection of items that serializes to match the XML 
+            returned by Fetch
+            </summary>
+        </member>
+        <member name="T:Fetch.Api.RestConnection`1">
+            <summary>
+            sends and receives communications with a RESTful web service using GET and POST.
+            </summary>
+            <typeparam name="ResponseType">the type of object to be deserialized from the 
+            response XML the web service returns</typeparam>
+        </member>
+        <member name="M:Fetch.Api.RestConnection`1.#ctor">
+            <summary>
+            default constructor
+            </summary>
+        </member>
+        <member name="M:Fetch.Api.RestConnection`1.InvokeGet(System.String)">
+            <summary>
+            initiates a GET request to the WS, and calls the given method
+            </summary>
+            <example>http://restful.webservice.com/&lt;methodName&gt;</example>
+            <param name="methodName">name of the method to execute</param>
+            <returns>an object deserialized from the XML returned</returns>
+        </member>
+        <member name="M:Fetch.Api.RestConnection`1.InvokeGet(System.String,System.String[])">
+            <summary>
+            initiates a GET request to the WS, and calls the given method with the optional arguments
+            </summary>
+            <example>http://restful.webservice.com/&lt;methodName&gt;/&lt;arg0&gt;/&lt;arg1&gt;</example>
+            <param name="methodName">name of the method to execute</param>
+            <param name="arguments">list of additional arguments to add the the URL</param>
+            <returns>an object deserialized from the XML returned</returns>
+        </member>
+        <member name="M:Fetch.Api.RestConnection`1.InvokePut(System.String,System.Object)">
+            <summary>
+            initiates a POST request to the WS to the given method and POSTs the given object,
+            serialized as XML
+            </summary>
+            <example>http://restful.webservice.com/&lt;methodName&gt;</example>
+            <param name="methodName">name of the method to execute</param>
+            <param name="toSend">object to serialize into XML and POST</param>
+            <returns>an object deserialized from the XML returned</returns>
+        </member>
+        <member name="M:Fetch.Api.RestConnection`1.InvokePut(System.String,System.Object,System.String[])">
+            <summary>
+            initiates a POST request to the WS to the given method and optional parameters and 
+            POSTs the given object serialized as XML
+            </summary>
+            <example>http://restful.webservice.com/&lt;methodName&gt;/&lt;arg0&gt;/&lt;arg1&gt;</example>
+            <param name="methodName">name of the method to execute</param>
+            <param name="toSend">object to serialize into XML and POST</param>
+            <param name="arguments">list of additional arguments to add the the URL</param>
+            <returns>an object deserialized from the XML returned</returns>
+        </member>
+        <member name="M:Fetch.Api.RestConnection`1.ThrowWebException(System.Net.WebException)">
+            <summary>
+            Reads any error messages thrown from the connection, and rethrows the exception w/ 
+            the additional information
+            </summary>
+        </member>
+        <member name="T:Fetch.Api.Message">
+            <summary>
+            Represents messages returned from Fetch REST GET commands that contain results
+            of the opertaion.
+            </summary>
+        </member>
+        <member name="M:Fetch.Api.Message.ToString">
+            <summary>
+            Override ToString
+            </summary>
+            <returns>text of the message</returns>
+        </member>
+        <member name="F:Fetch.Api.Message.OkResponse">
+            <summary>
+            constant representing a successful response
+            </summary>
+        </member>
+        <member name="P:Fetch.Api.Message.Text">
+            <summary>
+            The body of the message.
+            </summary>
+        </member>
+        <member name="T:Fetch.Api.Order">
+            <summary>
+            Order is a model object that mirrors the type used by the Fetch REST API, and contains
+            all the properties and methods offered by the API.
+            </summary>
+        </member>
+        <member name="M:Fetch.Api.Order.#ctor">
+            <summary>
+            default constructor
+            </summary>
+        </member>
+        <member name="M:Fetch.Api.Order.Save">
+            <summary>
+            Commits this order data to Fetch.  Order is created if new,
+            order is updated if existing.
+            </summary>
+        </member>
+        <member name="M:Fetch.Api.Order.Delete">
+            <summary>
+            Removes this order from Fetch.
+            </summary>
+        </member>
+        <member name="M:Fetch.Api.Order.Expire">
+            <summary>
+            Sets this order to expired, so it may no longer be downloaded.
+            </summary>
+        </member>
+        <member name="M:Fetch.Api.Order.SendEmail">
+            <summary>
+            Forces a send of an email to the customer of this order
+            </summary>
+        </member>
+        <member name="M:Fetch.Api.Order.RetrieveAll">
+            <summary>
+            Retrieve all orders available from Fetch
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fetch.Api.Order.Retrieve(System.String)">
+            <summary>
+            Retrieve a specific order from Fetch
+            </summary>
+            <param name="id">unique ID of the order to retrieve</param>
+        </member>
+        <member name="M:Fetch.Api.Order.Delete(System.String)">
+            <summary>
+            Deletes the given order from Fetch
+            </summary>
+            <param name="id">unique ID of the order to delete</param>
+        </member>
+        <member name="M:Fetch.Api.Order.Expire(System.String)">
+            <summary>
+            Expires the given order in Fetch, so it may no longer be downloaded.
+            </summary>
+            <param name="id">unique ID of the order</param>
+        </member>
+        <member name="M:Fetch.Api.Order.SendEmail(System.String)">
+            <summary>
+            Forces an email to be sent to the customer
+            </summary>
+            <param name="id">unique ID of the order</param>
+        </member>
+        <member name="M:Fetch.Api.Order.Create(Fetch.Api.Order)">
+            <summary>
+            Creates an order in Fetch
+            </summary>
+            <param name="order">the order data to create</param>
+            <returns>the actual Order object created by Fetch</returns>
+        </member>
+        <member name="M:Fetch.Api.Order.Update(Fetch.Api.Order)">
+            <summary>
+            Updates an order in Fetch
+            </summary>
+            <param name="order">the order data to update</param>
+            <returns>the actual Order object that was updated in Fetch</returns>
+        </member>
+        <member name="P:Fetch.Api.Order.SendEmailFlag">
+            <summary>
+            Gets or Sets whether or not to send an email when this order is created
+            </summary>
+        </member>
+        <member name="P:Fetch.Api.Order.Id">
+            <summary>
+            unique ID of this order
+            </summary>
+        </member>
+        <member name="P:Fetch.Api.Order.Title">
+            <summary>
+            textual description of the order
+            </summary>
+        </member>
+        <member name="P:Fetch.Api.Order.FirstName">
+            <summary>
+            first name of the customer
+            </summary>
+        </member>
+        <member name="P:Fetch.Api.Order.LastName">
+            <summary>
+            last name of the customer
+            </summary>
+        </member>
+        <member name="P:Fetch.Api.Order.Email">
+            <summary>
+            email address of the customer
+            </summary>
+        </member>
+        <member name="P:Fetch.Api.Order.ExpirationDate">
+            <summary>
+            date that this order will expire, and no longer be available for download
+            </summary>
+        </member>
+        <member name="P:Fetch.Api.Order.DownloadCount">
+            <summary>
+            number of times items in this order have been downloaded
+            </summary>
+        </member>
+        <member name="P:Fetch.Api.Order.CreatedAt">
+            <summary>
+            date that this order was created
+            </summary>
+        </member>
+        <member name="P:Fetch.Api.Order.OrderItems">
+            <summary>
+            items that are included in this order
+            </summary>
+        </member>
+        <member name="P:Fetch.Api.Order.IsNew">
+            <summary>
+            Gets true if this order has not been committed to Fetch.  Gets false if this
+            order already exists in Fetch.
+            </summary>
+        </member>
+        <member name="T:Fetch.Api.OrderCollection">
+            <summary>
+            Represents a collection of orders that serializes to match the XML 
+            returned by Fetch
+            </summary>
+        </member>
+        <member name="T:Fetch.Api.OrderItem">
+            <summary>
+            object that is used to describe items included in an order
+            </summary>
+        </member>
+        <member name="P:Fetch.Api.OrderItem.Sku">
+            <summary>
+            unique ID of an item in an order
+            </summary>
+        </member>
+        <member name="T:Fetch.Api.Config">
+            <summary>
+            Configuration parameters for the connection to Fetch
+            </summary>
+        </member>
+        <member name="M:Fetch.Api.Config.GetAuthorization">
+            <summary>
+            Retrieves the key/token pair encoded to be sent in a request to authenticate 
+            the request
+            </summary>
+            <returns>base64 encoded key/token pair</returns>
+        </member>
+        <member name="P:Fetch.Api.Config.Subdomain">
+            <summary>
+            the subdomain used to connect to fetch
+            </summary>
+            <example>http://&lt;subdomain&gt;.fetchapp.com/</example>
+        </member>
+        <member name="P:Fetch.Api.Config.Key">
+            <summary>
+            Authentication key used to log into the Fetch API. 
+            Log in to your Fetch website and click "API" to retrieve your Key and Token.
+            </summary>
+        </member>
+        <member name="P:Fetch.Api.Config.Token">
+            <summary>
+            Authentication token used to log into the Fetch API.
+            Log in to your Fetch website and click "API" to retrieve your Key and Token.
+            </summary>
+        </member>
+        <member name="T:Fetch.Api.SerializableList`1">
+            <summary>
+            SerializableList is a wrapper for the generic List&lt;&gt; that performs its own serialization,
+            to allow the user to add custom attributes to the list.  The .NET Framework List overrides
+            any serialization of properties of a custom list class, so they don't get serialized.
+            </summary>
+            <typeparam name="ItemType">type of the item in the list</typeparam>
+        </member>
+        <member name="M:Fetch.Api.SerializableList`1.#ctor">
+            <summary>
+            default constructor
+            </summary>
+        </member>
+        <member name="M:Fetch.Api.SerializableList`1.Add(`0)">
+            <summary>
+            Add an item to the list
+            </summary>
+        </member>
+        <member name="M:Fetch.Api.SerializableList`1.Clear">
+            <summary>
+            Clear all items from the list
+            </summary>
+        </member>
+        <member name="M:Fetch.Api.SerializableList`1.Contains(`0)">
+            <summary>
+            Returns true if the given item exists in the list
+            </summary>
+        </member>
+        <member name="M:Fetch.Api.SerializableList`1.CopyTo(`0[],System.Int32)">
+            <summary>
+            Copies the contents of the list into the given array, 
+            at the given index
+            </summary>
+        </member>
+        <member name="M:Fetch.Api.SerializableList`1.Remove(`0)">
+            <summary>
+            Remove the given item from the list
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Fetch.Api.SerializableList`1.GetEnumerator">
+            <summary>
+            Get the enumerator object from the list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fetch.Api.SerializableList`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Get the enumerator object from the list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fetch.Api.SerializableList`1.GetSchema">
+            <summary>
+            Get the Schema for the serialization of this list.  Not used.
+            </summary>
+        </member>
+        <member name="M:Fetch.Api.SerializableList`1.ReadXml(System.Xml.XmlReader)">
+            <summary>
+            Reads data for this list in from the given XmlReader.
+            May be overridden in a derived class to populate custom properties
+            </summary>
+        </member>
+        <member name="M:Fetch.Api.SerializableList`1.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Writes data from this list into the given XmlWriter.
+            May be overridden in a derived class to write custom properties
+            </summary>
+        </member>
+        <member name="P:Fetch.Api.SerializableList`1.Count">
+            <summary>
+            Gets the number of items in the list
+            </summary>
+        </member>
+        <member name="P:Fetch.Api.SerializableList`1.IsReadOnly">
+            <summary>
+            Returns false
+            </summary>
+        </member>
+        <member name="P:Fetch.Api.SerializableList`1.Attributes">
+            <summary>
+            A collection of name/value pairs to be written as attributes of the root
+            element of this list
+            </summary>
+        </member>
+        <member name="T:Fetch.Api.FetchException">
+            <summary>
+            Exceptions specific to the Fetch API
+            </summary>
+        </member>
+        <member name="M:Fetch.Api.FetchException.#ctor">
+            <summary>
+            default constructor
+            </summary>
+        </member>
+        <member name="M:Fetch.Api.FetchException.#ctor(System.String)">
+            <summary>
+            constructor with a message to include
+            </summary>
+        </member>
+        <member name="M:Fetch.Api.FetchException.#ctor(System.String,System.Exception)">
+            <summary>
+            constructor with a message and inner exception to include
+            </summary>
+        </member>
+    </members>
+</doc>
